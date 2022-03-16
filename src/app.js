@@ -9,7 +9,9 @@ const { rmSync } = require('fs')
 const dirPath=path.join(__dirname,'../public')
 const viewsPath=path.join(__dirname,'../templates/views')
 const partialPath=path.join(__dirname,'../templates/partials')
+
 const app= express()
+const port=process.env.PORT || 3000
 
 app.set('view engine', 'hbs')
 app.set('views',viewsPath)
@@ -96,7 +98,7 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('server is set to port 3000')
+app.listen(port,()=>{
+    console.log('server is set to port'+port)
 })
 
